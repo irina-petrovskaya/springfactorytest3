@@ -1,2 +1,6 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.mytests.springBoot.autoconfiguration.MainConfig1
+com.mytests.springBoot.autoconfiguration.MainConfig1,\
+com.mytests.springBoot.autoconfiguration.MainConfig2
+    
+
+

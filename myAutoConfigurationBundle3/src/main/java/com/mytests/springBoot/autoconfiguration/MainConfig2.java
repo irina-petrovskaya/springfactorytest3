@@ -5,7 +5,6 @@ import com.mytests.springBoot.autoconfiguration.importedConfigs.ImportedConfig11
 import com.mytests.springBoot.autoconfiguration.importedConfigs.ImportedConfig12;
 import com.mytests.springBoot.autoconfiguration.importedConfigs.ImportedConfig13;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.*;
 
 /**
@@ -15,16 +14,11 @@ import org.springframework.context.annotation.*;
  * *******************************
  */
 @Configuration
-@Import({ImportedConfig11.class, ImportedConfig12.class, ImportedConfig13.class})
-@ImportResource("xml-config.xml")
-//@ConditionalOnProperty(name = "myprops.main1", havingValue = "true", matchIfMissing = false)
-@ConditionalOnBean(name = "main1_condition")
-public class MainConfig1 {
+//@ConditionalOnBean(name="main2_condition")
+@ComponentScan("com.mytests.springBoot.autoconfiguration.scannedComponents")
+public class MainConfig2 {
 
-    @Bean
-    public Bean1 bean1_from_mainconfig1() {
-        return new Bean1();
-    }
+
 
 
 }

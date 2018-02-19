@@ -1,4 +1,4 @@
-package com.mytests.springBoot.autoconfiguration;
+package com.mytests.springBoot.autoconfiguration.bundle3_usage;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ConditionalBeansConfig {
 
-    @Bean(name= "main_condition")
+    @Bean(name= "main2_condition")
+    public String b0() {
+        return "mainconfig2_condition";
+    }
+
+    @Bean(name= "main1_condition")
     public String b1() {
         return "mainconfig1_condition";
     }
