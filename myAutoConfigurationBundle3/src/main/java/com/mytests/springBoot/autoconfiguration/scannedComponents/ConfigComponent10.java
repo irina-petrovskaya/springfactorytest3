@@ -13,8 +13,8 @@ import org.springframework.context.annotation.Configuration;
  * *******************************
  */
 @Configuration
-//@ConditionalOnProperty(name="myprops.configcomponent10", havingValue = "true")
-@ConditionalOnBean(name = "confcomp10_condition")
+@ConditionalOnProperty(name="myprops.configcomponent10", havingValue = "true")
+//@ConditionalOnBean(name = "confcomp10_condition")
 public class ConfigComponent10 {
 
     @Bean

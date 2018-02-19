@@ -14,8 +14,8 @@ import org.springframework.context.annotation.Import;
  * *******************************
  */
 @Configuration
-//@ConditionalOnProperty(name="myprops.importedconfig11", havingValue = "true")
-@ConditionalOnBean(name = "impconf11_condition")
+@ConditionalOnProperty(name="myprops.importedconfig11", havingValue = "true")
+//@ConditionalOnBean(name = "impconf11_condition")
 @Import(ImportedConfig111.class)
 public class ImportedConfig11 {
 

@@ -14,8 +14,8 @@ import org.springframework.context.annotation.Configuration;
  * *******************************
  */
 @Configuration
-//@ConditionalOnProperty(name="myprops.importedconfig12", havingValue = "true")
-@ConditionalOnBean(name="impconf12_condition")
+@ConditionalOnProperty(name="myprops.importedconfig12", havingValue = "true")
+//@ConditionalOnBean(name="impconf12_condition")
 public class ImportedConfig12 {
 
     @Bean
@@ -23,8 +23,8 @@ public class ImportedConfig12 {
         return new Bean12();
     }
     @Configuration
-    //@ConditionalOnProperty(name="myprops.importedcfg12inner", havingValue = "true")
-    @ConditionalOnBean(name="impconf12inner_condition")
+    @ConditionalOnProperty(name="myprops.importedcfg12inner", havingValue = "true")
+    //@ConditionalOnBean(name="impconf12inner_condition")
     public static class ImportedCfg12Inner{
         @Bean
         public Bean15 bean15_from_importedcfg12inner() {
