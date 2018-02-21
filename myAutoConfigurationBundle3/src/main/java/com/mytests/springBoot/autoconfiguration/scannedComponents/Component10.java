@@ -14,8 +14,8 @@ import org.springframework.stereotype.Component;
  * *******************************
  */
 @Component("Component10")
-//@ConditionalOnBean(name="comp10_condition")
-@ConditionalOnProperty(name="myprops.component10", havingValue = "true")
+@ConditionalOnBean(name="comp10_condition")
+//@ConditionalOnProperty(name="myprops.component10", havingValue = "true")
 public class Component10 {
 
     @Value("Component10")

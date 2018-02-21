@@ -13,13 +13,13 @@ import org.springframework.context.annotation.Configuration;
  * *******************************
  */
 @Configuration
-@ConditionalOnProperty(name="myprops.configcomp11", havingValue = "true")
-//@ConditionalOnBean(name = "confcomp11_condition")
+//@ConditionalOnProperty(name="myprops.configcomp11", havingValue = "true")
+@ConditionalOnBean(name = "confcomp11_condition")
 public class ConfigComponent11 {
 
     @Configuration
-    @ConditionalOnProperty(name="myprops.configcomp11inner", havingValue = "true")
-    //@ConditionalOnBean(name = "confcomp11inner_condition")
+    //@ConditionalOnProperty(name="myprops.configcomp11inner", havingValue = "true")
+    @ConditionalOnBean(name = "confcomp11inner_condition")
     public static class ConfComp11Inner{
         @Bean
         public Bean16 bean16_from_confcomp11inner() {

@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
  * *******************************
  */
 @Component("Component11")
-//@ConditionalOnBean(name="component11_condition")
-@ConditionalOnProperty(name="myprops.component11", havingValue = "true")
+@ConditionalOnBean(name="component11_condition")
+//@ConditionalOnProperty(name="myprops.component11", havingValue = "true")
 public class Component11 {
 
     @Value("Component11")
@@ -27,8 +27,8 @@ public class Component11 {
     }
 
     @Configuration
-    @ConditionalOnBean(name="component11inner_condition")
-    //@ConditionalOnProperty(name="myprops.component11inner", havingValue = "true")
+    //@ConditionalOnBean(name="component11inner_condition")
+    @ConditionalOnProperty(name="myprops.component11inner", havingValue = "true")
     public static class Component11Inner{
 
         @Bean

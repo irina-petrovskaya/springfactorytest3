@@ -47,16 +47,16 @@ public class ConditionalOnBeanTest {
     @Autowired(required=false) @Qualifier("impconf11_condition")
     private String impconf11_condition;
     @Autowired(required = false)
-    private ImportedConfig11 importedConfig11;
+     private ImportedConfig11 importedConfig11;
     @Autowired(required=false)
-    private Bean11 bean11_from_importedconfig11;
+     private Bean11 bean11_from_importedconfig11;
 
     @Autowired(required=false) @Qualifier("impconf12_condition")
     private String impconf12_condition;
     @Autowired(required = false)
-    private ImportedConfig12 importedConfig12;
+     private ImportedConfig12 importedConfig12;
     @Autowired(required=false)
-    private Bean12 bean12_from_importedconfig12;
+     private Bean12 bean12_from_importedconfig12;
 
     @Autowired(required=false) @Qualifier("impconf12inner_condition")
     private String impconf12inner_condition;
@@ -146,6 +146,27 @@ public class ConditionalOnBeanTest {
 
             Assert.assertNull(confComp11Inner);
             Assert.assertNull(bean16_from_confcomp11inner);
+        }
+    }
+
+    @Test
+    public void testImportedConfigs() {
+        if ((impconf11_condition != null)&&(impconf12_condition != null)&&(impconf12inner_condition!= null)) {
+            System.out.println("all beans from imported configs should be available");
+            Assert.assertNotNull(importedConfig11);
+            Assert.assertNotNull(importedConfig12);
+            Assert.assertNotNull(importedCfg12Inner);
+            Assert.assertNotNull(bean11_from_importedconfig11);
+            Assert.assertNotNull(bean12_from_importedconfig12);
+            Assert.assertNotNull(bean15_from_importedcfg12inner);
+        } else {
+            System.out.println("all beans from imported configs should not be available");
+            Assert.assertNotNull("importedConfig11",importedConfig11);
+            Assert.assertNotNull("importedConfig12",importedConfig12);
+            Assert.assertNotNull("importedCfg12Inner",importedCfg12Inner);
+            Assert.assertNotNull("bean11_from_importedconfig11",bean11_from_importedconfig11);
+            Assert.assertNotNull("bean12_from_importedconfig12",bean12_from_importedconfig12);
+            Assert.assertNotNull("bean15_from_importedcfg12inner",bean15_from_importedcfg12inner);
         }
     }
 }

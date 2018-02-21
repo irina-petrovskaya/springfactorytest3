@@ -52,7 +52,7 @@ public class ConditionalBeansConfig {
     public String s8() {
         return "";
     }
-    @Bean(name="impconf12inner_condition")
+    /*@Bean(name="impconf12inner_condition")
     public String s9() {
         return "";
     }
@@ -64,4 +64,4 @@ public class ConditionalBeansConfig {
     public String s11() {
         return "";
     }
-}
+*/}

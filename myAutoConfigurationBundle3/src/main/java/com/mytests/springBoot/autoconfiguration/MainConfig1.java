@@ -17,8 +17,8 @@ import org.springframework.context.annotation.*;
 @Configuration
 @Import({ImportedConfig11.class, ImportedConfig12.class, ImportedConfig13.class})
 @ImportResource("xml-config.xml")
-@ConditionalOnProperty(name = "myprops.main1", havingValue = "true", matchIfMissing = false)
-//@ConditionalOnBean(name = "main1_condition")
+//@ConditionalOnProperty(name = "myprops.main1", havingValue = "true", matchIfMissing = false)
+@ConditionalOnBean(name = "main1_condition")
 public class MainConfig1 {
 
     @Bean
